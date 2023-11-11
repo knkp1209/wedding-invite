@@ -1,0 +1,276 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0e6f6;
+  text-align: center;
+}
+
+.cover {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.photo-page {
+  text-align: center;
+  background-color: #fff;
+}
+
+.photo-page img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.container {
+  margin: auto;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 2s;
+}
+
+.slide-up {
+  animation: slideUp 2s;
+}
+
+.slide-down {
+  animation: slideDown 2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-left {
+  animation: slideLeft 2s ease-out;
+}
+
+.slide-right {
+  animation: slideRight 2s ease-out;
+}
+
+/* Button and input styles */
+button,
+input[type="text"] {
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #833471;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #a24d79;
+}
+
+.page {
+  display: none;
+  position: absolute; /* 新增 */
+  top: 0; /* 新增 */
+  left: 0; /* 新增 */
+  width: 100%; /* 新增 */
+  height: 100%; /* 新增 */
+  overflow: auto; /* 新增，以防内容超出屏幕大小 */
+  box-sizing: border-box; /* 新增 */
+  align-items: center;
+  justify-content: center;
+}
+
+.cover > div {
+  position: relative;
+  padding-top: 56.25%; /* 16:9的高度比例 (9 / 16 = 0.5625) */
+  background-image: url("image/1.jpg"); /* 替换为封面图片的路径 */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cover > h2 {
+  display: flex; /* 使用flex布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+}
+
+.circular-image {
+  width: 150px; /* 或者任何所需的尺寸 */
+  height: 150px; /* 使宽度和高度相等以形成完美的圆形 */
+  border-radius: 50%; /* 这会使图片变成圆形 */
+  object-fit: cover; /* 确保图片内容适当地填充在固定尺寸内 */
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-15px); /* 弹跳幅度减小到15px */
+  }
+  60% {
+    transform: translateY(-10px); /* 弹跳幅度减小到10px */
+  }
+}
+
+@keyframes zoomBounce {
+    0%, 100% {
+        transform: scale(1) translateY(0);
+    }
+    50% {
+        transform: scale(1.1) translateY(-12px);
+    }
+}
+
+.bounce {
+  animation: zoomBounce 1s ease-in-out 1;
+}
+
+/* 文字配色 */
+body {
+    background-color: #fff1e6; /* 米色背景 */
+    color: #343a40; /* 深灰色文本 */
+}
+
+.cover {
+    background-color: hsl(356.05deg 75.57% 43.33%); /* 红色背景 */
+}
+
+h1, h2, h5 {
+    /* color: #9b2c2c; /* 深红色文本 */
+  color: hsl(38.49deg 51.46% 79.8%);
+}
+
+.circular-image {
+    /* 如果您的图片是圆形的 */
+    /* border: 2px solid #f6eeee; /* 金色边框 */
+}
+
+.page > .button, button {
+  background-color: #942222;
+  border: none;
+}
+
+.page > .button:hover, button:hover {
+    background-color: #9b2c2c;
+}
+
+
+body > button {
+    background: rgb(184 175 175 / 20%); /* 灰白色背景，30%透明度 */
+    border: none;
+    cursor: pointer;
+    font-size: 16px; /* 或任何适合的大小 */
+    cursor: pointer;
+    border-radius: 50%; /* 这将使按钮成为圆形 */
+
+    /* 阴影和过渡效果（可选） */
+    /* box-shadow: 0 5px #999; */
+    /* transition: all 0.3s ease; */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+
+}
+
+body > button i {
+    display: none; /* 默认隐藏所有图标 */
+}
+
+body > button .fa-play {
+    display: inline-block; /* 如果音乐默认是暂停的，则显示播放图标 */
+}
+
+
+
+body > button:hover {
+    background: rgb(184 175 175 / 20%); /* 灰白色背景，30%透明度 */
+}
+
+body > button:active {
+    background: rgb(184 175 175 / 20%); /* 灰白色背景，30%透明度 */
+    /* box-shadow: 0 2px #666; */
+    /* transform: translateY(4px); */
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    animation: spin 5s linear infinite;
+}
+

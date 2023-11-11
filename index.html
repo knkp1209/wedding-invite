@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>杨文杭 & 黄杰雯</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  </head>
+  <body>
+    <i class="fa-solid fa-headphones-simple"></i>
+    <button onclick="toggleMusic()"><i class="fas fa-play" style="display: none;"></i><i class="fas fa-music"></i></button>
+    <audio id="background-music" autoplay loop>
+      <source src="music/marry_you.mp3" type="audio/mpeg" />
+      您的浏览器不支持 audio 元素。
+    </audio>
+
+    <!-- Cover Page -->
+    <div class="page cover" id="page0" style="display: block">
+      <h1 style="margin-top: 20%" class="slide-down">我们结婚啦❤</h1>
+      <h5 class="slide-up">在无尽的岁月里，轻握你的手，是我最温柔的诺言。</h5>
+      <div></div>
+      <h2>
+        <div class="slide-left">杨文杭</div>
+        <div>&</div>
+        <div class="slide-right">黄杰雯</div>
+      </h2>
+      <button onclick="startAutoPlay()">打开邀请函</button>
+    </div>
+
+    <!-- Photo and Text Pages -->
+    <!-- Page 1 -->
+    <div class="page" id="page1" style="display: none; background: white">
+      <p style="margin-top: 10%"></p>
+      <img
+        src="image/2.jpg"
+        alt="Circular Image"
+        class="circular-image bounce"
+      />
+      <img
+        src="image/we.png"
+        alt="Circular Image"
+        style="width: 100%"
+        class="bounce"
+      />
+      <div class="slide-down" style="color: #d68d8d">
+        <p>当你看到这份邀请函的时候</p>
+        <p>说明我们的婚礼已经进入倒计时了</p>
+        <p>很开心这一天</p>
+        <p>你为我们而来</p>
+        <p>很期待您及您的家人能来参加我们的婚礼</p>
+        <p>一起见证我们的幸福</p>
+      </div>
+    </div>
+
+    <!-- Page 2 -->
+    <div class="page photo-page" id="page2" style="display: none">
+      <img src="image/3.jpg" alt="Photo 2" class="slide-left" />
+      <p class="fade-in">Our Favorite Memory</p>
+    </div>
+
+    <!-- Page 3 -->
+    <div class="page photo-page" id="page3" style="display: none">
+      <img src="image/4.jpg" alt="Photo 3" class="zoom-in" />
+      <p class="slide-right">The Proposal Moment</p>
+      <img src="image/5.jpg" alt="Photo 3" class="zoom-in" />
+    </div>
+
+    <!-- Page 4 -->
+    <div class="page photo-page" id="page4" style="display: none">
+      <img src="image/6.jpg" alt="Photo 3" class="zoom-in" />
+      <p class="slide-right">The Proposal Moment</p>
+      <img src="image/7.jpg" alt="Photo 3" class="zoom-in" />
+    </div>
+
+    <!-- Page 5 -->
+    <div class="page photo-page" id="page5" style="display: none">
+      <img src="image/8.jpg" alt="Photo 3" class="zoom-in" />
+      <p class="slide-right">The Proposal Moment</p>
+    </div>
+
+    <!-- Page 6 -->
+    <div class="page photo-page" id="page6" style="display: none">
+      <img src="image/9.jpg" alt="Photo 3" class="zoom-in" />
+      <p class="slide-right">The Proposal Moment</p>
+      <img src="image/10.jpg" alt="Photo 3" class="zoom-in" />
+    </div>
+
+    <!-- Page 7 -->
+    <div class="page photo-page" id="page7" style="display: none">
+      <img src="image/11.jpg" alt="Photo 3" class="zoom-in" />
+      <p class="slide-right">The Proposal Moment</p>
+    </div>
+
+    <div class="page photo-page" id="page8" style="display: none">
+      <img src="image/12.jpg" alt="Photo 3" class="zoom-in" />
+      <p class="slide-right">The Proposal Moment</p>
+    </div>
+
+    <div class="page photo-page" id="page9" style="display: none">
+      <img src="image/13.jpg" alt="Photo 3" class="zoom-in" />
+      <p class="slide-right">The Proposal Moment</p>
+    </div>
+
+    <div class="page photo-page" id="page10" style="display: none">
+      <img src="image/14.jpg" alt="Photo 3" class="zoom-in" />
+      <p class="slide-right">The Proposal Moment</p>
+    </div>
+
+    <!-- Repeat for other pages with different animations and text -->
+
+    <!-- RSVP and Details Page -->
+    <div class="page container" id="page11" style="display: none">
+      <p class="date">Saturday, 18th June 2023</p>
+      <div class="location">
+        <h2>Location</h2>
+        <p>Garden of Dreams, Springfield</p>
+      </div>
+      <div class="rsvp">
+        <h2>RSVP</h2>
+        <input type="text" id="name" placeholder="Your Name" />
+        <button onclick="submitRSVP()">Submit</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
