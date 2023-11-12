@@ -4,6 +4,13 @@ body {
   text-align: center;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 防止出现滚动条 */
+}
+
 .cover {
   height: 100vh;
   display: flex;
@@ -21,7 +28,6 @@ body {
 .photo-page img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 20px;
 }
 
 .container {
@@ -98,12 +104,80 @@ body {
   }
 }
 
+
+@keyframes imgLeft {
+  from {
+    transform: translateX(-150%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes imgRight {
+  from {
+    transform: translateX(150%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes imgTop {
+  from {
+    transform: translateY(-200%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes imgBottom {
+  from {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.img-top {
+  animation: imgTop 4s ease-in-out;
+}
+
+.img-bottom {
+  animation: imgBottom 4s ease-in-out;
+}
+
+.img-left, .img-right, .img-top, .img_bottom {
+    /* 分别为图片设置flex比例 */
+    flex: 0 0 auto; /* 防止图片被拉伸或压缩 */
+    width: 100%; /* 让图片宽度填满容器 */
+    object-fit: cover; /* 保持图片的宽高比 */
+}
+
+.img-left {
+  animation: imgLeft 4s ease-in-out;
+}
+
+.img-right {
+  animation: imgRight 4s ease-in-out;
+}
+
 .slide-left {
-  animation: slideLeft 2s ease-out;
+  animation: slideLeft 2s ease-in-out;
 }
 
 .slide-right {
-  animation: slideRight 2s ease-out;
+  animation: slideRight 2s ease-in-out;
 }
 
 /* Button and input styles */
@@ -139,10 +213,9 @@ button:hover {
   justify-content: center;
 }
 
-.cover > div {
+.bg-img {
   position: relative;
   padding-top: 56.25%; /* 16:9的高度比例 (9 / 16 = 0.5625) */
-  background-image: url("image/1.jpg"); /* 替换为封面图片的路径 */
   background-size: cover;
   background-position: center;
   display: flex;
@@ -181,96 +254,131 @@ button:hover {
 }
 
 @keyframes zoomBounce {
-    0%, 100% {
-        transform: scale(1) translateY(0);
-    }
-    50% {
-        transform: scale(1.1) translateY(-12px);
-    }
+  0%,
+  100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.1) translateY(-12px);
+  }
 }
 
 .bounce {
-  animation: zoomBounce 1s ease-in-out 1;
+  animation: zoomBounce 5s ease-in-out 1;
 }
 
 /* 文字配色 */
 body {
-    background-color: #fff1e6; /* 米色背景 */
-    color: #343a40; /* 深灰色文本 */
+  background-color: #fff1e6; /* 米色背景 */
+  color: #343a40; /* 深灰色文本 */
 }
 
 .cover {
-    background-color: hsl(356.05deg 75.57% 43.33%); /* 红色背景 */
+  background-color: hsl(356.05deg 75.57% 43.33%); /* 红色背景 */
 }
 
-h1, h2, h5 {
-    /* color: #9b2c2c; /* 深红色文本 */
+h1,
+h2,
+h5 {
+  /* color: #9b2c2c; /* 深红色文本 */
   color: hsl(38.49deg 51.46% 79.8%);
 }
 
 .circular-image {
-    /* 如果您的图片是圆形的 */
-    /* border: 2px solid #f6eeee; /* 金色边框 */
+  /* 如果您的图片是圆形的 */
+  /* border: 2px solid #f6eeee; /* 金色边框 */
 }
 
-.page > .button, button {
+.page > .button,
+button {
   background-color: #942222;
   border: none;
 }
 
-.page > .button:hover, button:hover {
-    background-color: #9b2c2c;
+.page > .button:hover,
+button:hover {
+  background-color: #9b2c2c;
 }
 
-
 body > button {
-    background: rgb(184 175 175 / 20%); /* 灰白色背景，30%透明度 */
-    border: none;
-    cursor: pointer;
-    font-size: 16px; /* 或任何适合的大小 */
-    cursor: pointer;
-    border-radius: 50%; /* 这将使按钮成为圆形 */
+  background: rgb(184 175 175 / 20%); /* 灰白色背景，30%透明度 */
+  border: none;
+  cursor: pointer;
+  font-size: 16px; /* 或任何适合的大小 */
+  cursor: pointer;
+  border-radius: 50%; /* 这将使按钮成为圆形 */
 
-    /* 阴影和过渡效果（可选） */
-    /* box-shadow: 0 5px #999; */
-    /* transition: all 0.3s ease; */
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 999;
-
+  /* 阴影和过渡效果（可选） */
+  /* box-shadow: 0 5px #999; */
+  /* transition: all 0.3s ease; */
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
 }
 
 body > button i {
-    display: none; /* 默认隐藏所有图标 */
+  display: none; /* 默认隐藏所有图标 */
 }
 
 body > button .fa-play {
-    display: inline-block; /* 如果音乐默认是暂停的，则显示播放图标 */
+  display: inline-block; /* 如果音乐默认是暂停的，则显示播放图标 */
 }
 
-
-
 body > button:hover {
-    background: rgb(184 175 175 / 20%); /* 灰白色背景，30%透明度 */
+  background: rgb(184 175 175 / 20%); /* 灰白色背景，30%透明度 */
 }
 
 body > button:active {
-    background: rgb(184 175 175 / 20%); /* 灰白色背景，30%透明度 */
-    /* box-shadow: 0 2px #666; */
-    /* transform: translateY(4px); */
+  background: rgb(184 175 175 / 20%); /* 灰白色背景，30%透明度 */
+  /* box-shadow: 0 2px #666; */
+  /* transform: translateY(4px); */
 }
 
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .rotating {
-    animation: spin 5s linear infinite;
+  animation: spin 5s linear infinite;
 }
 
+.fullscreen-background {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  /* 确保没有额外的外边距或内边距 */
+  margin: 0;
+  padding: 0;
+}
+
+.sweet-love {
+  font-size: 58px;
+  font-family: serif;
+  display: inline-block;
+  margin-top: 140%;
+}
+
+
+@keyframes swooleBounce {
+  0% {
+    transform: scale(0.1) translateY(0);
+  }
+  75% {
+    transform: scale(0.5) translateY(0);
+  }
+  50%,
+  100% {
+    transform: scale(1.1) translateY(-12px);
+  }
+}
+
+.sweet-love-bounce {
+  animation: swooleBounce 5s ease-in-out 1;
+}

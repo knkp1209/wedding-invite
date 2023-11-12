@@ -5,14 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>杨文杭 & 黄杰雯</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    <meta property="og:image" content="image/2.jpg" />
-    <meta property="og:description" content="分享的描述" />
-    <meta property="og:title" content="分享的标题" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <meta
+      property="og:image"
+      content="http://wedding.applet.site/image/2.jpg"
+    />
+    <meta property="og:description" content="杨文杭&黄杰雯的婚礼邀请" />
+    <meta
+      property="og:title"
+      content="我们将在12月03日举行婚礼,诚挚邀请您的到来"
+    />
   </head>
   <body>
     <i class="fa-solid fa-headphones-simple"></i>
-    <button onclick="toggleMusic()"><i class="fas fa-play" style="display: none;"></i><i class="fas fa-music"></i></button>
+    <button onclick="toggleMusic()">
+      <i class="fas fa-play" style="display: none"></i
+      ><i class="fas fa-music"></i>
+    </button>
     <audio id="background-music" autoplay loop>
       <source src="music/marry_you.mp3" type="audio/mpeg" />
       您的浏览器不支持 audio 元素。
@@ -22,7 +34,10 @@
     <div class="page cover" id="page0" style="display: block">
       <h1 style="margin-top: 20%" class="slide-down">我们结婚啦❤</h1>
       <h5 class="slide-up">在无尽的岁月里，轻握你的手，是我最温柔的诺言。</h5>
-      <div></div>
+      <div
+        class="bg-img"
+        style="background-image: url(&quot;image/1.jpg&quot;)"
+      ></div>
       <h2>
         <div class="slide-left">杨文杭</div>
         <div>&</div>
@@ -58,55 +73,84 @@
 
     <!-- Page 2 -->
     <div class="page photo-page" id="page2" style="display: none">
-      <img src="image/3.jpg" alt="Photo 2" class="slide-left" />
-      <p class="fade-in">Our Favorite Memory</p>
+      <div
+        class="fullscreen-background slide-down"
+        style="background-image: url(&quot;image/3.jpg&quot;);"
+      >
+        <span
+          class="sweet-love sweet-love-bounce"
+        >Sweet Love</span>
+        <span class="sweet-love sweet-love-bounce" style="margin-top: -10px; font-size: 24px; letter-spacing: 6px;">
+          save&nbsp;&nbsp;the&nbsp;&nbsp;date
+        </span>
+      </div>
     </div>
 
     <!-- Page 3 -->
-    <div class="page photo-page" id="page3" style="display: none">
-      <img src="image/4.jpg" alt="Photo 3" class="zoom-in" />
-      <p class="slide-right">The Proposal Moment</p>
-      <img src="image/5.jpg" alt="Photo 3" class="zoom-in" />
+    <div class="page photo-page" id="page3" style="display: none; flex-direction: column; height: 100%;">
+      <img src="image/5.jpg" alt="Photo 3" class="img-right" style="flex-grow: 3;" />
+      <p class="slide-right" style="flex-grow: 1;">The Proposal Moment</p>
+      <img src="image/4.jpg" alt="Photo 3" class="img-left" style="flex-grow: 2;" />
     </div>
 
     <!-- Page 4 -->
-    <div class="page photo-page" id="page4" style="display: none">
-      <img src="image/6.jpg" alt="Photo 3" class="zoom-in" />
-      <p class="slide-right">The Proposal Moment</p>
-      <img src="image/7.jpg" alt="Photo 3" class="zoom-in" />
+    <div class="page photo-page" id="page4" style="display: none; flex-direction: column; height: 100%;">
+      <img src="image/15.jpg" alt="Photo 3" class="img-left" style="flex-grow: 4;" />
+      <img src="image/14.jpg" alt="Photo 3" class="img-top" style="flex-grow: 4;" />
+      <p class="slide-right" style="flex-grow: 2;">The Proposal Moment</p>
     </div>
 
     <!-- Page 5 -->
     <div class="page photo-page" id="page5" style="display: none">
-      <img src="image/8.jpg" alt="Photo 3" class="zoom-in" />
-      <p class="slide-right">The Proposal Moment</p>
+      <div
+        class="fullscreen-background slide-down"
+        style="background-image: url(&quot;image/6.jpg&quot;);  background-size: contain; background-repeat: no-repeat;"
+      >
+        <span
+          class="sweet-love sweet-love-bounce"
+        >Sweet Love</span>
+        <span class="sweet-love sweet-love-bounce" style="margin-top: -10px; font-size: 24px; letter-spacing: 6px;">
+          save&nbsp;&nbsp;the&nbsp;&nbsp;date
+        </span>
+      </div>
     </div>
 
     <!-- Page 6 -->
-    <div class="page photo-page" id="page6" style="display: none">
-      <img src="image/9.jpg" alt="Photo 3" class="zoom-in" />
-      <p class="slide-right">The Proposal Moment</p>
-      <img src="image/10.jpg" alt="Photo 3" class="zoom-in" />
+    <div class="page photo-page" id="page6" style="display: none; flex-direction: column; height: 100%;">
+      <img src="image/7.jpg" alt="Photo 3" class="img-left" style="flex-grow: 3;" />
+      <img src="image/8.jpg" alt="Photo 3" class="img-top" style="flex-grow: 4;" />
+      <p class="slide-right" style="flex-grow: 5;">The Proposal Moment</p>
     </div>
 
     <!-- Page 7 -->
-    <div class="page photo-page" id="page7" style="display: none">
-      <img src="image/11.jpg" alt="Photo 3" class="zoom-in" />
-      <p class="slide-right">The Proposal Moment</p>
+    <div class="page photo-page" id="page7" style="display: none; flex-direction: column; height: 100%;">
+      <img src="image/13.jpg" alt="Photo 3" class="img-top" style="flex-grow: 5;" />
+      <p class="slide-right" style="flex-grow: 3;">The Proposal Moment</p>
     </div>
 
     <div class="page photo-page" id="page8" style="display: none">
-      <img src="image/12.jpg" alt="Photo 3" class="zoom-in" />
-      <p class="slide-right">The Proposal Moment</p>
+      <div
+        class="fullscreen-background slide-down"
+        style="background-image: url(&quot;image/12.jpg&quot;);  background-size: contain; background-repeat: no-repeat;"
+      >
+        <span
+          class="sweet-love sweet-love-bounce"
+        >Sweet Love</span>
+        <span class="sweet-love sweet-love-bounce" style="margin-top: -10px; font-size: 24px; letter-spacing: 6px;">
+          save&nbsp;&nbsp;the&nbsp;&nbsp;date
+        </span>
+      </div>
     </div>
 
-    <div class="page photo-page" id="page9" style="display: none">
-      <img src="image/13.jpg" alt="Photo 3" class="zoom-in" />
-      <p class="slide-right">The Proposal Moment</p>
+    <div class="page photo-page" id="page9" style="display: none; flex-direction: column; height: 100%;">
+      <img src="image/11.jpg" alt="Photo 3" class="img-left" style="flex-grow: 4;" />
+      <p class="slide-right" style="flex-grow: 1;">The Proposal Moment</p>
+      <img src="image/10.jpg" alt="Photo 3" class="img-top" style="flex-grow: 4;" />
+      <!-- <p class="slide-right" style="flex-grow: 2;">The Proposal Moment</p> -->
     </div>
 
-    <div class="page photo-page" id="page10" style="display: none">
-      <img src="image/14.jpg" alt="Photo 3" class="zoom-in" />
+    <div class="page photo-page" id="page10" style="display: none; flex-direction: column; height: 100%;">
+      <img src="image/9.jpg" alt="Photo 3" class="img-top" />
       <p class="slide-right">The Proposal Moment</p>
     </div>
 
